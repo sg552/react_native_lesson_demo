@@ -8,6 +8,7 @@ import SayHi from 'screens/SayHi'
 import BlogList from 'screens/BlogList'
 import ShowImage from 'screens/ShowImage'
 import ViewComponent from 'screens/ViewComponent'
+import StateDemo from 'screens/StateDemo'
 
 const myNavigator = createStackNavigator(
   {
@@ -16,7 +17,8 @@ const myNavigator = createStackNavigator(
     SayHi: SayHi,
     BlogList: BlogList,
     ShowImage: ShowImage,
-    ViewComponent: ViewComponent
+    ViewComponent: ViewComponent,
+    StateDemo: StateDemo
   },
   {
     initialRouteName: "Home"
