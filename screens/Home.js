@@ -7,12 +7,11 @@ export default class Home extends React.Component{
   }
 
   render(){
-    const {navigate} = this.props.navigation;
     return (
       <Button
         title = "click and jump"
         onPress = { () =>
-          navigate('AboutUs', { name: 'Siwei'})
+          this.props.navigation.navigate('AboutUs', { name: 'Siwei'})
         }
       />
     )
