@@ -29,6 +29,11 @@ export default class Home extends React.Component{
             () => this.props.navigation.navigate("ShowImage")
           }
         />
+        <Button title = "View Component的例子 "
+          onPress = {
+            () => this.props.navigation.navigate("ViewComponent")
+          }
+        />
         <Button title = "进入到siwei.me文章列表"
           onPress = {
             () => this.props.navigation.navigate("BlogList")
