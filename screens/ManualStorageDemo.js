@@ -6,28 +6,37 @@
 
       constructor(props){
         super(props)
-
-        this.setStateAndVisitTimes()
         this.state = {
-          isLoaded: false
+          isLoaded: false,
+          manual_count: ''
         }
       }
 
-      // 初始化 计数器
-      setStateAndVisitTimes = async () => {
-        count = parseInt(await AsyncStorage.getItem("count")  || 0 ) + 1
-        this.setState({
-          isLoaded: true,
-          count: count
-        })
-        await AsyncStorage.setItem("count", count + "")
+      // 没有使用箭头符号， 那么在View中就要  .bind(this) , 否则会报错  this.setState 找不到
+      async readData () {
+        try{
+          const manual_count = await AsyncStorage.getItem("manual_count") || '0'
+          this.setState({
+            isLoaded: true,
+            manual_count: manual_count
+          })
+        }catch(error){
+          console.error(error)
+        }
+
       }
 
-      async mySaveThenAlert(){
+      // 使用箭头符号，就可以在view中调用的时候，不写  .bind(this)
+      mySaveThenAlert = async () => {
+      // async mySaveThenAlert(){
         try{
-          await AsyncStorage.setItem("count", 888 +"")
-          const value = await AsyncStorage.getItem("visitTimes")
-          Alert.alert("visitTimes: " + value)
+          await AsyncStorage.setItem("manual_count", 888 +"")
+          const manual_count = await AsyncStorage.getItem("manual_count")
+          this.setState({
+            isLoaded: true,
+            manual_count: manual_count
+          })
+          Alert.alert("您设置成的手动干预的计数器: " + manual_count)
         }catch(error){
           console.error(error)
         }
@@ -38,19 +47,19 @@
         if(this.state.isLoaded){
           return(
             <View>
-              <Text>Loaded!  </Text>
-              <Text>value is: {this.state.count} </Text>
+              <Text>页面加载成功!</Text>
+              <Text>访问次数： {this.state.manual_count} </Text>
             </View>
           )
         }else{
           return(
             <View>
-              <Text>Before loading visitTimes... </Text>
+              <Text>尚未加载成功，请点击下面的按钮进行手动加载 ... </Text>
               <Button
-                title="Let's load the data!"
-                onPress={this.readData} />
+                title="手动加载"
+                onPress={this.readData.bind(this)} />
               <Button
-                title="save to 888!"
+                title="手动干预：修改访问次数为888"
                 onPress={this.mySaveThenAlert} />
             </View>
           )
