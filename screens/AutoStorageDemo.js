@@ -15,6 +15,9 @@ export default class AutoStorageDemo extends Component{
   // 初始化 计数器
   setStateAndVisitTimes = async () => {
     count = parseInt(await AsyncStorage.getItem("count")  || 0 ) + 1
+    if(isNaN(count)){
+      count = 1
+    }
     this.setState({
       count: count
     })

@@ -16,6 +16,9 @@
       async readData () {
         try{
           const manual_count = await AsyncStorage.getItem("manual_count") || '0'
+          if(isNaN(manual_count)){
+            manual_count = 1
+          }
           this.setState({
             isLoaded: true,
             manual_count: manual_count
@@ -59,7 +62,7 @@
                 title="手动加载"
                 onPress={this.readData.bind(this)} />
               <Button
-                title="手动干预：修改访问次数为888"
+                title="手动干预：修改访问次数为 + 888"
                 onPress={this.mySaveThenAlert} />
             </View>
           )
