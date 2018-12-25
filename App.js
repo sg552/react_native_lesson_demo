@@ -11,6 +11,7 @@ import ViewComponent from 'screens/ViewComponent'
 import StateDemo from 'screens/StateDemo'
 import AutoStorageDemo from 'screens/AutoStorageDemo'
 import ManualStorageDemo from 'screens/ManualStorageDemo'
+import I18nDemo from 'screens/I18nDemo'
 
 const myNavigator = createStackNavigator(
   {
@@ -22,7 +23,8 @@ const myNavigator = createStackNavigator(
     ViewComponent: ViewComponent,
     StateDemo: StateDemo,
     AutoStorageDemo: AutoStorageDemo,
-    ManualStorageDemo: ManualStorageDemo
+    ManualStorageDemo: ManualStorageDemo,
+    I18nDemo: I18nDemo
   },
   {
     initialRouteName: "Home"

@@ -56,6 +56,12 @@ export default class Home extends React.Component{
             () => this.props.navigation.navigate("ManualStorageDemo")
           }
         />
+
+        <Button title = "国际化 i18n"
+          onPress = {
+            () => this.props.navigation.navigate("I18nDemo")
+          }
+        />
       </View>
     )
   }
