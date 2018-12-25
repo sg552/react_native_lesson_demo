@@ -44,6 +44,12 @@ export default class Home extends React.Component{
             () => this.props.navigation.navigate("BlogList")
           }
         />
+
+        <Button title = "使用本地存储 (Storage)"
+          onPress = {
+            () => this.props.navigation.navigate("StorageDemo")
+          }
+        />
       </View>
     )
   }

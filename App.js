@@ -9,6 +9,7 @@ import BlogList from 'screens/BlogList'
 import ShowImage from 'screens/ShowImage'
 import ViewComponent from 'screens/ViewComponent'
 import StateDemo from 'screens/StateDemo'
+import StorageDemo from 'screens/StorageDemo'
 
 const myNavigator = createStackNavigator(
   {
@@ -18,7 +19,8 @@ const myNavigator = createStackNavigator(
     BlogList: BlogList,
     ShowImage: ShowImage,
     ViewComponent: ViewComponent,
-    StateDemo: StateDemo
+    StateDemo: StateDemo,
+    StorageDemo: StorageDemo
   },
   {
     initialRouteName: "Home"
