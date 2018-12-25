@@ -9,7 +9,8 @@ import BlogList from 'screens/BlogList'
 import ShowImage from 'screens/ShowImage'
 import ViewComponent from 'screens/ViewComponent'
 import StateDemo from 'screens/StateDemo'
-import StorageDemo from 'screens/StorageDemo'
+import CorrectStorageDemo from 'screens/CorrectStorageDemo'
+import WrongStorageDemo from 'screens/WrongStorageDemo'
 
 const myNavigator = createStackNavigator(
   {
@@ -20,7 +21,8 @@ const myNavigator = createStackNavigator(
     ShowImage: ShowImage,
     ViewComponent: ViewComponent,
     StateDemo: StateDemo,
-    StorageDemo: StorageDemo
+    CorrectStorageDemo: CorrectStorageDemo,
+    WrongStorageDemo: WrongStorageDemo
   },
   {
     initialRouteName: "Home"

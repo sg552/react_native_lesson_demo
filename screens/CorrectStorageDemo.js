@@ -6,7 +6,6 @@ export default class StorageDemo extends Component{
 
   constructor(props){
     super(props)
-    AsyncStorage.setItem("visitTimes", 100)
     this.state = {
       isLoaded: false,
       visitTimes: 0
@@ -29,18 +28,26 @@ export default class StorageDemo extends Component{
   }
 
   render() {
-    this.readData()
 
     if(this.state.isLoaded){
       return(
         <View>
-          <Text>Loaded!  </Text>
+          <Text>Loaded! {this.state.visitTimes} </Text>
+          <Button
+           onPress={() =>  {
+            AsyncStorage.setItem("visitTimes", 100)
+            this.setState({isLoaded: false})
+            }}
+           title="Set Storage Item"
+           />
         </View>
       )
     }else{
       return(
         <View>
-          <Text>Loading... </Text>
+          <Button
+          onPress={this.readData}
+          title="Load from async storage"></Button>
         </View>
       )
     }

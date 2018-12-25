@@ -45,9 +45,15 @@ export default class Home extends React.Component{
           }
         />
 
-        <Button title = "使用本地存储 (Storage)"
+        <Button title = "StorageDemo(correct)"
           onPress = {
-            () => this.props.navigation.navigate("StorageDemo")
+            () => this.props.navigation.navigate("CorrectStorageDemo")
+          }
+        />
+
+        <Button title = "StorageDemo(wrong)"
+          onPress = {
+            () => this.props.navigation.navigate("WrongStorageDemo")
           }
         />
       </View>
