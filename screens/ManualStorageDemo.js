@@ -2,7 +2,7 @@
     import {Image, Platform, StyleSheet, Text, View, Button, Alert} from 'react-native'
     import { AsyncStorage } from "react-native"
 
-    export default class WrongStorageDemo extends Component{
+    export default class ManualStorageDemo extends Component{
 
       constructor(props){
         super(props)
@@ -45,28 +45,14 @@
         }else{
           return(
             <View>
-              {/*
-              <Button
-                title="save First! value: 1"
-                onPress={()=>{
-                    AsyncStorage.setItem("visitTimes", 888)
-                }}
-              />
-              */}
-
               <Text>Before loading visitTimes... </Text>
-
               <Button
                 title="Let's load the data!"
                 onPress={this.readData} />
-
               <Button
                 title="save to 888!"
                 onPress={this.mySaveThenAlert} />
-
             </View>
-
-
           )
         }
 

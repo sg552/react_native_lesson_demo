@@ -45,15 +45,15 @@ export default class Home extends React.Component{
           }
         />
 
-        <Button title = "StorageDemo(correct)"
+        <Button title = "自动的StorageDemo"
           onPress = {
-            () => this.props.navigation.navigate("CorrectStorageDemo")
+            () => this.props.navigation.navigate("AutoStorageDemo")
           }
         />
 
-        <Button title = "StorageDemo(wrong)"
+        <Button title = "手动的StorageDemo"
           onPress = {
-            () => this.props.navigation.navigate("WrongStorageDemo")
+            () => this.props.navigation.navigate("ManualStorageDemo")
           }
         />
       </View>
