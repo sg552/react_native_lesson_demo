@@ -62,6 +62,13 @@ export default class Home extends React.Component{
             () => this.props.navigation.navigate("I18nDemo")
           }
         />
+
+        <Button title = "Redux Demo"
+          onPress = {
+            () => this.props.navigation.navigate("ReduxDemo")
+          }
+        />
+
       </View>
     )
   }

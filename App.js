@@ -12,6 +12,11 @@ import StateDemo from 'screens/StateDemo'
 import AutoStorageDemo from 'screens/AutoStorageDemo'
 import ManualStorageDemo from 'screens/ManualStorageDemo'
 import I18nDemo from 'screens/I18nDemo'
+import ReduxDemo from 'screens/ReduxDemo'
+
+// Redux
+import { connect } from 'react-redux'
+import { increaseCount } from './redux_demo/action_creators'
 
 const myNavigator = createStackNavigator(
   {
@@ -24,7 +29,8 @@ const myNavigator = createStackNavigator(
     StateDemo: StateDemo,
     AutoStorageDemo: AutoStorageDemo,
     ManualStorageDemo: ManualStorageDemo,
-    I18nDemo: I18nDemo
+    I18nDemo: I18nDemo,
+    ReduxDemo: ReduxDemo
   },
   {
     initialRouteName: "Home"
