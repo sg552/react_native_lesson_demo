@@ -15,10 +15,10 @@ export default class I18nDemo extends React.Component{
         I18n Demo
         </Text>
         <Text>
-        book: { i18n.t('book', {language: 'zh'}) }
+        book: { i18n.t('book', {locale: 'zh'}) }
         </Text>
         <Text>
-        apple: {  i18n.t('apple', {language: 'en'}) }
+        apple: {  i18n.t('apple', {locale: 'en'}) }
         </Text>
       </View>
     )
