@@ -29,7 +29,8 @@ class ReduxDemo extends Component{
         <Text>
         {  console.info("== this.props")  }
         {  console.info(this.props)  }
-          您点击了：{this.props.count}  {"\n"} （请使用 根目录下的 "AppWithRedux.js "进入到本页面。 否则页面看不到效果。（只能在console 中看到效果) ）
+          您点击了：{this.props.count}  {"\n"}
+          注意： 本例子无法与AsyncStorage结合使用。 请参考demo:  github.com/sg552 
         </Text>
       </View>
     )
@@ -39,7 +40,7 @@ class ReduxDemo extends Component{
 // 5. 把state 映射到 props中。
 const mapStateToProps = state => {
 
-  console.info("== state.count: " , state)   // '== state.count: ', { countReducer: { count: 0 } } 
+  console.info("== state.count: " , state)   // '== state.count: ', { countReducer: { count: 0 } }
   return {
     // 5.1 务必注意，这里是 store.countReducer.count  不是 state.count
     count: state.countReducer.count
